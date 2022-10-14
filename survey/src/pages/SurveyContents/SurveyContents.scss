@@ -1,0 +1,73 @@
+@import "../../styles/variables.scss";
+
+.SurveyContentsMain {
+  width: 400px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid gray;
+  padding: 3em 4em;
+
+  .SurveyContentsHomeIconWrapper {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    .surveyContentsHomeIcon {
+      cursor: pointer;
+    }
+  }
+
+  .SurveyContentsTop {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .SurveyContentsTitle {
+      font-size: 20px;
+      font-weight: bold;
+      color: $color-text-black;
+    }
+  }
+
+  .progressWrapper {
+    display: flex;
+    align-items: center;
+
+    .SurveyContentsQuestionNumber {
+      display: flex;
+      align-items: center;
+      margin-top: 0.8em;
+      margin-left: 1em;
+      .SurveyContentsQuestionIngNumber {
+        font-size: 20px;
+        font-weight: bold;
+        color: $color-main-color;
+      }
+      .SurveyContentsQuestionTotalNumber {
+        font-size: 16px;
+        margin-left: 0.3em;
+        color: $color-text-gray;
+      }
+    }
+  }
+
+  .SurveyContentsWrapper {
+    height: 350px;
+
+    .SurveyContentsQuestionInfo {
+      font-size: 16px;
+      line-height: 1.2em;
+      color: black;
+    }
+    .SurveyContentsAnswerWrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 1em;
+      .answerBtns {
+        width: 100%;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}

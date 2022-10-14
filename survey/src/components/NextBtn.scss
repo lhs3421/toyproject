@@ -1,0 +1,16 @@
+@import "../styles/variables.scss";
+
+.subButtonWrapperSubNext {
+  &:hover {
+    color: $color-main-color;
+  }
+}
+.subButtonWrapperSubNextToggle {
+  .OkSpan {
+    color: $color-main-color;
+    cursor: pointer;
+  }
+  .NotOkaySpan {
+    color: $color-text-gray;
+  }
+}
