@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# 설문 조사
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 프로젝트 소개
 
-## Available Scripts
+- 개발 기간 : 2022.10.10 ~ 2022.10.16
 
-In the project directory, you can run:
+- 도서관 관련 설문 조사 웹사이트
 
-### `npm start`
+<hr>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 기술 스택 & 라이브러리
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- TypeScript, React, Sass, axios, ant-design
 
-### `npm test`
+<hr>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 구현 사항
 
-### `npm run build`
+### 1. ant-design을 활용한 UI 구현
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img width="300" alt="스크린샷 2022-10-16 오후 8 27 31" src="https://user-images.githubusercontent.com/95524491/196032759-a54b87c7-3d35-4c30-9402-d0aea3c7f024.png">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. useContext를 활용하여 전역으로 데이터 관리
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img width="300" alt="스크린샷 2022-10-16 오후 8 53 54" src="https://user-images.githubusercontent.com/95524491/196033949-fcec21d5-4218-4a22-8c23-b56ab0c272cd.png">
 
-### `npm run eject`
+### 3.현재 문항에 따른 프로그래스바 구현
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<img width="300" alt="스크린샷 2022-10-16 오후 8 43 15" src="https://user-images.githubusercontent.com/95524491/196033553-12bf4c6e-23d5-4656-8092-9265959362e1.gif">
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 4.단일 선택, 복수 선택에 따른 버튼 구현
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<img width="300" alt="스크린샷 2022-10-16 오후 8 43 15" src="https://user-images.githubusercontent.com/95524491/196033762-fd56f590-a496-46fd-aba0-dbabc03fba14.gif">
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<hr>
 
-## Learn More
+## 전체 시연 영상
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img src="https://user-images.githubusercontent.com/95524491/196032468-065996b7-d43c-49b0-a81c-c1ae968ec75e.gif" width="500"/>
