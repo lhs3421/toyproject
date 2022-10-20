@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-function Hsanswer() {
+function Pagination() {
   const RENDERING_NUMBER = 12;
   const [data, setData] = useState([]);
   const [limit, setLimit] = useState(RENDERING_NUMBER);
@@ -95,4 +95,4 @@ const Button = styled.button`
   width: 30px;
 `;
 
-export default Hsanswer;
+export default Pagination;

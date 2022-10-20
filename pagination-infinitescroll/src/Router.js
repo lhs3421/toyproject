@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
-import InfiniteScroll from "./components/infiniteScroll/InfiniteScroll";
-import Pagination from "./components/pagination/Pagination";
-import Hsanswer from "./components/infiniteScroll/Hsanswer";
+import InfiniteScroll from "./pages/InfiniteScroll/InfiniteScroll";
+import Pagination from "./pages/Pagination/Pagination";
 
 function Router() {
   return (
@@ -10,7 +9,7 @@ function Router() {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/pagination" element={<Pagination />} />
-        <Route path="/infinitescroll" element={<Hsanswer />} />
+        <Route path="/infinitescroll" element={<InfiniteScroll />} />
       </Routes>
     </BrowserRouter>
   );
