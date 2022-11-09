@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { DataContext } from "../../context/CreateContext";
 import PrevBtn from "../../components/PrevBtn";
@@ -9,6 +9,12 @@ function SurveyResult() {
   const { printData, setPrintData } = useContext(DataContext);
   const navigate = useNavigate();
   const { state } = useLocation();
+
+  useEffect(() => {
+    if (!state) {
+      navigate("/");
+    }
+  }, [state]);
 
   const handlePrintData = () => {
     const map = printData.map((a) => Object.values(a));

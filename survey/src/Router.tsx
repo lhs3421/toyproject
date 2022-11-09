@@ -11,6 +11,7 @@ function Router() {
         <Route path="/" element={<SurveyStart />} />
         <Route path="start" element={<SurveyContents />} />
         <Route path="/done" element={<SurveyResult />} />
+        <Route path="/*" element={<SurveyStart />} />
       </Routes>
     </BrowserRouter>
   );

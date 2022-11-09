@@ -26,15 +26,15 @@ function SurveyStart() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    try {
-      (async () => {
-        const res = await axios.get("http://localhost:3000/data/surveys.json");
+    (async () => {
+      try {
+        const res = await axios.get("./data/surveys.json");
         const data = res.data;
         setSurveys(data.surveys);
-      })();
-    } catch (err) {
-      console.log("Error", err);
-    }
+      } catch (error) {
+        console.log("Error", error);
+      }
+    })();
   }, []);
 
   useEffect(() => {

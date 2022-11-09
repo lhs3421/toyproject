@@ -30,33 +30,31 @@ function SurveyContents() {
   const { state } = useLocation();
 
   useEffect(() => {
-    try {
-      (async () => {
-        const res = await axios.get(
-          "http://localhost:3000/data/questions.json",
-        );
+    (async () => {
+      try {
+        const res = await axios.get("./data/questions.json");
         const data = res.data;
         const map = state.questions.map((a: number) => data.questions[a]);
         setQuestions(map);
-      })();
-    } catch (err) {
-      console.log("Error", err);
-    }
+      } catch (err) {
+        navigate("/");
+      }
+    })();
   }, []);
 
   useEffect(() => {
-    try {
-      (async () => {
-        const res = await axios.get("http://localhost:3000/data/answers.json");
+    (async () => {
+      try {
+        const res = await axios.get("./data/answers.json");
         const data = res.data;
         const map = questions[number].answers.map(
           (a: number) => data.answers[a],
         );
         setAnswers(map);
-      })();
-    } catch (err) {
-      console.log("Error", err);
-    }
+      } catch (err) {
+        navigate("/");
+      }
+    })();
   }, [questions, number]);
 
   useEffect(() => {
@@ -170,61 +168,65 @@ function SurveyContents() {
   };
 
   return (
-    <section className="SurveyContentsMain">
-      <div className="SurveyContentsHomeIconWrapper">
-        <HomeOutlined
-          className="surveyContentsHomeIcon"
-          style={{ color: "#1890ff", fontSize: "25px" }}
-          onClick={handleBack}
-        />
-      </div>
-      <div className="SurveyContentsTop">
-        <h1 className="SurveyContentsTitle">{`${state.title}`}</h1>
-      </div>
-      <div className="progressWrapper">
-        <ProgressBar isProgressBar={isProgressBar} />
-        <div className="SurveyContentsQuestionNumber">
-          <span className="SurveyContentsQuestionIngNumber">{`${
-            number + 1
-          }`}</span>
-          <span className="SurveyContentsQuestionTotalNumber">/</span>
-          <span className="SurveyContentsQuestionTotalNumber">
-            {`${questions.length}`}
-          </span>
-        </div>
-      </div>
-      <div className="SurveyContentsWrapper">
-        <span className="SurveyContentsQuestionInfo">
-          {`${questions[number].title}`}
-        </span>
-        <div className="SurveyContentsAnswerWrapper">
-          {answers.map((answer, index) => {
-            return (
-              <Button
-                key={index}
-                className="answerBtns"
-                type={isSelected[index] ? "primary" : "default"}
-                onClick={(e) => {
-                  questions[number].mode
-                    ? handleAnswerButtonDouble(e.currentTarget.id)
-                    : handleAnswerButtonSingle(e.currentTarget.id);
-                }}
-                id={index + ""}
-              >
-                {answer}
-              </Button>
-            );
-          })}
-        </div>
-      </div>
-      <div className="subButtonWrapper">
-        <PrevBtn handlePrevButton={handlePrevButton} />
-        <NextBtn
-          handleNextButton={handleNextButton}
-          selectAnswer={selectAnswer}
-        />
-      </div>
-    </section>
+    <>
+      {!!state && (
+        <section className="SurveyContentsMain">
+          <div className="SurveyContentsHomeIconWrapper">
+            <HomeOutlined
+              className="surveyContentsHomeIcon"
+              style={{ color: "#1890ff", fontSize: "25px" }}
+              onClick={handleBack}
+            />
+          </div>
+          <div className="SurveyContentsTop">
+            <h1 className="SurveyContentsTitle">{`${state.title}`}</h1>
+          </div>
+          <div className="progressWrapper">
+            <ProgressBar isProgressBar={isProgressBar} />
+            <div className="SurveyContentsQuestionNumber">
+              <span className="SurveyContentsQuestionIngNumber">{`${
+                number + 1
+              }`}</span>
+              <span className="SurveyContentsQuestionTotalNumber">/</span>
+              <span className="SurveyContentsQuestionTotalNumber">
+                {`${questions.length}`}
+              </span>
+            </div>
+          </div>
+          <div className="SurveyContentsWrapper">
+            <span className="SurveyContentsQuestionInfo">
+              {`${questions[number].title}`}
+            </span>
+            <div className="SurveyContentsAnswerWrapper">
+              {answers.map((answer, index) => {
+                return (
+                  <Button
+                    key={index}
+                    className="answerBtns"
+                    type={isSelected[index] ? "primary" : "default"}
+                    onClick={(e) => {
+                      questions[number].mode
+                        ? handleAnswerButtonDouble(e.currentTarget.id)
+                        : handleAnswerButtonSingle(e.currentTarget.id);
+                    }}
+                    id={index + ""}
+                  >
+                    {answer}
+                  </Button>
+                );
+              })}
+            </div>
+          </div>
+          <div className="subButtonWrapper">
+            <PrevBtn handlePrevButton={handlePrevButton} />
+            <NextBtn
+              handleNextButton={handleNextButton}
+              selectAnswer={selectAnswer}
+            />
+          </div>
+        </section>
+      )}
+    </>
   );
 }
 
